@@ -41,10 +41,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return <ChakraProvider theme={IndicatorTheme}>
     <Layout>
       <Head>
-        <title>indicators</title>
+        <title>IAPI</title>
         <meta name="description" content="Crypto indicators" />
         <link href='https://fonts.googleapis.com/css?family=Poppins:400,500,600,700' rel='stylesheet' />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/logo.jpeg" />
       </Head>
       <Component {...pageProps} />
 

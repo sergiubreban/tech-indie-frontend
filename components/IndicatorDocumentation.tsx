@@ -42,7 +42,6 @@ const IndicatorDocumentation: FC<{ config: IndicatorConfig; api: 'rest' | 'graph
             )}
           </Tbody>
         </Table>
-        )}
       </FloatingPanel>
       <FloatingPanel flex='1' spacing={1} >
         <Text alignSelf='center' fontSize='1.4rem' p='1rem 0'>Response (Model)</Text>

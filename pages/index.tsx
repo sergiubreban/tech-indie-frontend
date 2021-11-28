@@ -4,7 +4,7 @@ import {
   Stack,
   useColorModeValue,
 } from '@chakra-ui/react';
-import ProductDetails from '../components/Details';
+import ProductDetails from '../components/ProductDetails';
 import Landing from '../components/Landing';
 
 export default function Home() {

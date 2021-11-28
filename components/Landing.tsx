@@ -1,5 +1,4 @@
 import {
-  Center,
   Container,
   Stack,
   Flex,
@@ -9,11 +8,11 @@ import {
   Button,
   Image,
   Icon,
-  IconButton,
   useColorModeValue,
   IconProps,
 } from '@chakra-ui/react';
-import { Link } from 'react-scroll'
+import { Link } from 'react-scroll';
+
 // const scroll = Scroll.a
 const Landing = () => {
   return (
@@ -31,7 +30,7 @@ const Landing = () => {
             <Text
               as={'span'}
               position={'relative'}
-              color={useColorModeValue('#1A202C', '#fff')}
+              color={useColorModeValue('dark', '#fff')}
               _after={{
                 content: "''",
                 width: 'full',
@@ -45,37 +44,39 @@ const Landing = () => {
               Technical Analysis
             </Text>
             <br />
-            <Text as={'span'} color={'red.400'}>
-              GraphQL API!
+            <Text as={'span'} fontSize='3rem' color={'red.400'}>
+              REST & GraphQL API!
             </Text>
           </Heading>
           <Text color={'gray.500'}>
-            Croapi is a Helpful Provider for fetching Technical Indicator data.
+            Helpful Provider for fetching Technical Indicator data.
             GraphQL API ready to help you to build your project.
             You can use multiple Indicators / markets / timeframes in the same HTTP Request!
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
             direction={{ base: 'column', sm: 'row' }}>
-            <Button
-              rounded={'full'}
-              size={'lg'}
-              fontWeight={'normal'}
-              px={6}
-              colorScheme={'red'}
-              bg={'red.400'}
-              _hover={{ bg: 'red.500' }}>
-              <Text color='#fff' fontWeight='500'> Get started</Text>
-            </Button>
+
+            <Link to='get-started' smooth={true} spy={true}>
+              <Button
+                rounded={'full'}
+                size={'lg'}
+                fontWeight={'normal'}
+                px={6}
+                colorScheme={'red'}
+                bg={'red.400'}
+                _hover={{ bg: 'red.500' }}>
+                <Text color='#fff' fontWeight='500'> Get started</Text>
+              </Button>
+            </Link>
             <Link to='product-details' smooth={true} spy={true}>
               <Button
                 rounded={'full'}
                 size={'lg'}
                 fontWeight={'normal'}
                 px={6}
-              // leftIcon={<PlayIcon h={4} w={4} color={'gray.300'} />}
               >
-                <Text color={useColorModeValue('#1A202C', '#fff')} fontWeight='500'>More Details</Text>
+                <Text color={useColorModeValue('dark', '#fff')} fontWeight='500'>More Details</Text>
               </Button>
             </Link>
           </Stack>
@@ -102,20 +103,8 @@ const Landing = () => {
             boxShadow={'2xl'}
             width={'full'}
             overflow={'hidden'}>
-            {/* <IconButton
-              aria-label={'Play Button'}
-              variant={'ghost'}
-              _hover={{ bg: 'transparent' }}
-              icon={<Button as='span' variant='outline' size='xs' colorScheme='red'>get started</Button>}
-              size={'lg'}
-              color={'white'}
-              position={'absolute'}
-              left={'50%'}
-              top={'50%'}
-              transform={'translateX(-50%) translateY(-50%)'}
-            /> */}
             <Image
-              alt={'Hero Image'}
+              alt={'Coin'}
               fit={'cover'}
               align={'center'}
               w={'100%'}

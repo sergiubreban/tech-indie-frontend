@@ -1,10 +1,11 @@
-import { FC, ReactNode } from 'react';
+import { FC } from 'react';
 import {
   Box,
   Flex,
   Link,
   Button,
   Text,
+  Image,
   useColorModeValue,
   Stack,
   useColorMode,
@@ -18,7 +19,6 @@ const NavLink: FC<{ to?: string }> = ({ children, to }) => (
     rounded={'md'}
     _hover={{
       textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
     }}
     href={to ?? '#'}>
     {children}
@@ -30,10 +30,21 @@ const MenuBar: FC = () => {
 
   return (
     <>
-      <Box borderRadius='12px 0 0 12px' bg={useColorModeValue('red.400', '#1A202C')} px={4} position='fixed' right='0'>
+      <Box borderRadius='12px 0 0 12px' bg={useColorModeValue('red.400', 'dark')} px={4} position='fixed' right='0'>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Stack direction='row' spacing={5}>
-            <NavLink to='/'><Text color='#fff'>Logo</Text></NavLink>
+          <Stack direction='row' spacing={5} alignItems='center'>
+            <NavLink to='/'><Text color='#fff'>
+              <Image
+                alt={'logo'}
+                fit={'cover'}
+                align={'center'}
+                w={'100%'}
+                h={'30px'}
+                borderRadius='50%'
+                src={
+                  '/logo.jpeg'
+                }
+              /></Text></NavLink>
             <NavLink to='/documentation'><Text color='#fff'>Documentation</Text></NavLink>
           </Stack>
           <Flex alignItems={'center'}>

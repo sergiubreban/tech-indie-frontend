@@ -50,7 +50,7 @@ const Landing = () => {
           </Heading>
           <Text color={'gray.500'}>
             Helpful Provider for fetching Technical Indicator data.
-            GraphQL API ready to help you to build your project.
+            REST & GraphQL API ready to help you to build your project.
             You can use multiple Indicators / markets / timeframes in the same HTTP Request!
           </Text>
           <Stack

@@ -36,8 +36,8 @@ const DocumentationMenu: FC<{ apiHook: any }> = (props) => {
           <Text cursor='pointer' fontSize='18px'>{config.name}</Text>
         </Link>)}
       </Stack> : <Flex direction='column' h={`${length * 2 + 2}rem`}>
-        <Box boxSizing='border-box' bg='red.400' border='1px solid dark' borderRadius='12px' w='1rem' h={`${offset / 100 * length * 2}rem`} />
-        <Box boxSizing='border-box' bg='red.400' border='1px solid dark' borderRadius='12px' w='1rem' flex='1' mt='2rem' />
+        <Box boxSizing='border-box' bg='red.400' border='1px solid dark' borderRadius='12px' w={{ base: '.5rem', md: '1rem' }} h={`${offset / 100 * length * 2}rem`} />
+        <Box boxSizing='border-box' bg='red.400' border='1px solid dark' borderRadius='12px' w={{ base: '.5rem', md: '1rem' }} flex='1' mt='2rem' />
       </Flex>}
     </Box>
   </Flex >
@@ -55,10 +55,12 @@ const Documentation: FC = () => {
 
   return <Container maxW={'5xl'} >
     <DocumentationMenu apiHook={[api, setApi]} />
-    {config.indicators.map((config) => <Box key={config.name} p='10rem 0'>
-      <IndicatorDocumentation config={config} api={api} />
-    </Box>
-    )}
+    <Stack alignItems='center' >
+      {config.indicators.map((config) => <Box key={config.name} p='10rem 0'>
+        <IndicatorDocumentation config={config} api={api} />
+      </Box>
+      )}
+    </Stack>
   </Container>
 }
 

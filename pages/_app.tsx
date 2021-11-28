@@ -32,6 +32,9 @@ const IndicatorTheme = extendTheme({
     },
     bodySecondary: {
       fontSize: '12px'
+    },
+    pagination: {
+      fontSize: ['9px', '12px']
     }
   }
 })

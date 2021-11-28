@@ -9,10 +9,11 @@ import {
   useColorModeValue,
   Stack,
   useColorMode,
+  LinkProps,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
-const NavLink: FC<{ to?: string }> = ({ children, to }) => (
+const NavLink: FC<LinkProps> = ({ children, ...props }) => (
   <Link
     px={2}
     py={1}
@@ -20,7 +21,7 @@ const NavLink: FC<{ to?: string }> = ({ children, to }) => (
     _hover={{
       textDecoration: 'none',
     }}
-    href={to ?? '#'}>
+    {...props}>
     {children}
   </Link>
 );
@@ -33,19 +34,19 @@ const MenuBar: FC = () => {
       <Box borderRadius='12px 0 0 12px' bg={useColorModeValue('red.400', 'dark')} px={4} position='fixed' right='0'>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <Stack direction='row' spacing={5} alignItems='center'>
-            <NavLink to='/'><Text color='#fff'>
+            <NavLink href='/'><Text color='#fff'>
               <Image
                 alt={'logo'}
                 fit={'cover'}
                 align={'center'}
-                w={'100%'}
+                w={'30px'}
                 h={'30px'}
                 borderRadius='50%'
                 src={
                   '/logo.jpeg'
                 }
               /></Text></NavLink>
-            <NavLink to='/documentation'><Text color='#fff'>Documentation</Text></NavLink>
+            <NavLink href='/documentation'><Text color='#fff'>Documentation</Text></NavLink>
           </Stack>
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>

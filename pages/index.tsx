@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main >
       <Stack spacing={10}>
-        <Box p='15rem 0'>
+        <Box p='10rem 0'>
           <Landing />
         </Box>
         <Banner />

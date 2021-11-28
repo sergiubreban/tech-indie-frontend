@@ -14,8 +14,9 @@ const CallToAction: FC<{ label: string, href: string }> = (props) => {
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
       p='5rem 2rem'
-      w='250px'
-      h='200px'>
+    w='250px'
+    h='200px'
+    >
       <Text as='h2' fontSize='24px' fontWeight='600'>{label}</Text>
     </Center>
   </Link>
@@ -56,14 +57,16 @@ const ProductDetails: FC = (props) => {
 
   return <Box>
     <Container maxW={'7xl'}>
-      <Center p='15rem' pb='25rem' id='get-started'>
-        <Stack direction='row' spacing={'5rem'}>
+      <Center pb='25rem' id='get-started'>
+        <Stack
+          direction={{ base: 'column', md: 'row' }}
+          spacing={'5rem'}>
           <CallToAction label='GraphQL API' href='https://rapidapi.com/breban.sergiu@gmail.com/api/crypto-indicators'></CallToAction>
           <CallToAction label='REST API' href='https://rapidapi.com/breban.sergiu@gmail.com/api/crypto-indicators-rest'></CallToAction>
         </Stack>
       </Center>
       <Stack spacing={'15rem'} id='product-details'>
-        <Flex alignItems='center' justify='center'>
+        <Stack direction={{ base: 'column', md: 'row' }} >
           <Stack flex='1' spacing={5} alignItems='center' >
             <Heading
               lineHeight={.9}
@@ -80,8 +83,8 @@ const ProductDetails: FC = (props) => {
           <Box flex='1'>
             <CurrenciesTable query={currencyQuery} />
           </Box>
-        </Flex>
-        <Flex alignItems='center' justify='center'>
+        </Stack>
+        <Stack direction={{ base: 'column', md: 'row' }} >
           <Stack flex='1' alignItems='center' >
             <Heading
               lineHeight={.9}
@@ -99,7 +102,7 @@ const ProductDetails: FC = (props) => {
               <IndicatorsTable query={indicatorQuery} />
             </Flex>
           </Box>
-        </Flex>
+        </Stack>
         <Flex justify='center'>
           <Link href='/documentation'>
             <Button

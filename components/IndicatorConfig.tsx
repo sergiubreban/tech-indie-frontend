@@ -13,11 +13,13 @@ const GqlSnippetRow: FC<{ label: string, closing?: string }> = (props) => {
 }
 
 const RestSnippetRow: FC<{ uri: string }> = (props) => {
-  return <Stack direction='row' spacing={4} p='2' pt='1rem'>
-    <Tag size={'sm'} variant="solid" colorScheme="green">
-      <Text fontSize='12px' fontWeight='600' color='#fff'>GET</Text>
-    </Tag>
-    <Text textStyle='body'>{props.uri}</Text>
+  return <Stack direction='row' spacing={4} p='2' pt='1rem' >
+    <Box>
+      <Tag size={'sm'} variant="solid" colorScheme="green">
+        <Text fontSize='12px' fontWeight='600' color='#fff'>GET</Text>
+      </Tag>
+    </Box>
+    <Text textStyle='body' wordBreak='break-all'>{props.uri}</Text>
   </Stack>
 }
 

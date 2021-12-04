@@ -1,22 +1,9 @@
 import { AppProps } from 'next/dist/shared/lib/router/router'
 import '../styles/globals.css'
-import { ChakraProvider, Center, extendTheme } from "@chakra-ui/react"
+import { ChakraProvider, Text, Link, Center, extendTheme, Stack } from "@chakra-ui/react"
 import Layout from '../components/Layout'
 import Head from 'next/head'
 import "focus-visible/dist/focus-visible"
-import { initializeApp } from "firebase/app";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBTV48H4R2kKolbOM4LgAIt6L6-7R0wSXE",
-  authDomain: "indicator-api.firebaseapp.com",
-  projectId: "indicator-api",
-  storageBucket: "indicator-api.appspot.com",
-  messagingSenderId: "234818492718",
-  appId: "1:234818492718:web:eea75f10f8cdd3353642bf"
-};
-
-// Initialize Firebase
-initializeApp(firebaseConfig);
 
 const IndicatorTheme = extendTheme({
   colors: {
@@ -53,7 +40,10 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <footer >
         <Center w='100%' h='100px'>
-          © 2021 indicatorapi.com, All rights reserved.
+          <Stack spacing={1}>
+            <Text textStyle='body'>© 2021 indicatorapi.com, All rights reserved.</Text>
+            <Center><Link href='https://breban.ro' target='_blank'><Text textStyle='body'>@Author</Text></Link></Center>
+          </Stack>
         </Center>
       </footer>
     </Layout>

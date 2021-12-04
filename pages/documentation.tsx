@@ -15,7 +15,6 @@ const DocumentationMenu: FC<{ apiHook: any }> = (props) => {
   const [api, setApi] = props.apiHook;
   const offset = useTopScrollPercent()
 
-  const length = config.indicators.length
   const isGqlSelected = (api === 'graphql')
 
   return <Flex direction='column' alignItems='flex-start' justify='flex-start' position='fixed' left='25px' top='50%' transform='translate(0,-50%)' onMouseLeave={() => setIsHover(false)} >
@@ -30,16 +29,17 @@ const DocumentationMenu: FC<{ apiHook: any }> = (props) => {
         </MenuList>
       </Menu>
     </Box>
-    <Box onMouseEnter={() => setIsHover(true)}>
-      {isHover ? <Stack spacing={2} bg='#F56565' p='1rem' borderRadius='8px' color='dark'>
+    <Box >
+      {isHover ? <Box h='80vh' bg='#F56565' overflow='scroll' p='1rem' borderRadius='8px'><Stack spacing={2} overflow='scroll' color='dark'>
         {config.indicators.map((config) => <Link key={config.name} smooth={true} spy={true} to={config.name.split(' ').join('')}>
           <Text cursor='pointer' fontSize='18px'>{config.name}</Text>
         </Link>)}
-      </Stack> : <Flex direction='column' h={`${length * 2 + 2}rem`}>
-        <Box boxSizing='border-box' bg='red.400' border='1px solid dark' borderRadius='12px' w={{ base: '.5rem', md: '1rem' }} h={`${offset / 100 * length * 2}rem`} />
+      </Stack></Box> : <Flex direction='column' h={'80vh'}>
+        <Box boxSizing='border-box' bg='red.400' border='1px solid dark' borderRadius='12px' w={{ base: '.5rem', md: '1rem' }} h={`${offset / 100 * 80}vh`} />
         <Box boxSizing='border-box' bg='red.400' border='1px solid dark' borderRadius='12px' w={{ base: '.5rem', md: '1rem' }} flex='1' mt='2rem' />
       </Flex>}
     </Box>
+    <Box onMouseEnter={() => setIsHover(true)} bg='red.400' border='1px solid dark' borderRadius='12px'><Text textStyle='body' color='#fff' p='1'>Legend</Text></Box>
   </Flex >
 }
 

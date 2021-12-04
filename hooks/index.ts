@@ -21,7 +21,7 @@ const useTopScrollPercent = () => {
       const percent = getScrollPercent()
       percent && setOffset(percent)
     }
-    window.addEventListener("scroll", scrollHandler);
+    window?.addEventListener?.("scroll", scrollHandler);
 
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);

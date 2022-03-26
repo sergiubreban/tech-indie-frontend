@@ -61,8 +61,8 @@ const ProductDetails: FC = (props) => {
         <Stack
           direction={{ base: 'column', md: 'row' }}
           spacing={'5rem'}>
-          <CallToAction label='GraphQL API' href='https://rapidapi.com/breban.sergiu@gmail.com/api/crypto-indicators'></CallToAction>
-          <CallToAction label='REST API' href='https://rapidapi.com/breban.sergiu@gmail.com/api/crypto-indicators-rest'></CallToAction>
+          <CallToAction label='GraphQL API' href='https://rapidapi.com/brebansergiu-hUWzQ7XiOsg/api/crypto-indicators'></CallToAction>
+          <CallToAction label='REST API' href='https://rapidapi.com/brebansergiu-hUWzQ7XiOsg/api/crypto-indicators-rest'></CallToAction>
         </Stack>
       </Center>
       <Stack spacing={'15rem'} id='product-details'>
